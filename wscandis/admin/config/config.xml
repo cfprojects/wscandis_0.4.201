@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<config>
+	<settings>
+		<setting name="applicationTitle" value="Administrator"/>
+		<setting name="authType" value="Simple" />
+		<setting name="storageScope" value="session" />
+		<setting name="versionTag" value="0.4.20" />
+		<setting name="bugEmailRecipients" value="yourname@yourdomain.com" />
+		<setting name="bugEmailSender" value="yourname@yourdomain.com" />
+		<setting name="contactEmail" value="yourname@yourdomain.com" />
+		<setting name="publicEventsList" value="ehGeneral.dspLogin,ehGeneral.doLogin" />
+
+		<setting name="permissionsConfigHREF" value="config/permissions.xml"/>
+		<setting name="menuConfigHREF" value="config/menu.xml"/>
+		<setting name="authConfigHREF" value="config/auth.xml.cfm"/>
+		
+		<setting name="wscandisPath" value="/wscandis/"/>
+		<setting name="dataProviderClass" value="xmlProvider"/>
+	</settings>
+
+		
+	<!-- This section describes all services that will be loaded into the application -->
+	<services>
+		<!-- Application service (service layer) -->
+		<service name="app" class="components/services/appService.cfc">
+			<init-param name="wscandisPath" settingName="wscandisPath" />
+			<init-param name="dataProviderClass" settingName="dataProviderClass" />
+		</service>
+		
+		<!-- persistent scope storage services -->		
+		<service name="storage" class="components/services/storageService.cfc">
+			<init-param name="storageScope" settingName="storageScope" />
+			<init-param name="dataStoreName">wscandisAdmin_dataStore</init-param>
+		</service>
+		<service name="cfcStorage" class="components/services/cfcStorageService.cfc">
+			<init-param name="storageScope" settingName="storageScope" />
+			<init-param name="dataStoreName">wscandisAdmin_CFCdataStore</init-param>
+		</service>
+		
+		<!-- error reporting service -->
+		<service name="bugTracker" class="components/services/bugTrackerService.cfc">
+			<init-param name="bugEmailSender" settingName="bugEmailSender" />
+			<init-param name="bugEmailRecipients" settingName="bugEmailRecipients" />
+		</service>
+		
+		<!-- navigation menu service -->
+		<service name="menu" class="components/services/menuService.cfc">
+			<init-param name="opmlPath"  settingName="menuConfigHREF" />
+		</service>
+		
+		<!-- login service -->
+		<service name="loginService" class="components/services/loginService/loginServiceFactory.cfc">
+			<init-param name="xmlConfigHREF" settingName="authConfigHREF" />
+			<init-param name="authType" settingName="authType" />
+		</service>
+		
+		<!-- permissions service -->
+		<service name="permissions" class="components/services/permissions.cfc">
+			<init-param name="xmlConfigHREF" settingName="permissionsConfigHREF" />
+		</service>
+		
+		
+	</services>
+</config>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<opml>
+    <head>
+        <title>Navigation menu for intranet application shell</title>
+    </head>
+    <body>	
+    	<outline text="General">
+			<outline text="Home" url="?event=ehGeneral.dspMain" id="menu_general_home" />
+    		<outline text="Add Service" url="?event=ehService.dspEdit" id="menu_general_addService" />
+    		<!-- <outline text="Stats" url="?event=ehGeneral.dspStats" id="menu_general_stats" /> -->
+    		<outline text="Log Viewer" url="?event=ehGeneral.dspLogViewer" id="menu_general_logViewer" />
+    	</outline>
+    	<outline text="Setup">
+    		<outline text="Settings" url="?event=ehGeneral.dspSettings" id="menu_setup_settings" />
+    		<outline text="Reset Application" url="javascript:if(confirm('Reset Application?')) document.location='?resetApp=1'" id="menu_setup_reset" />
+		</outline>
+	</body>
+</opml>

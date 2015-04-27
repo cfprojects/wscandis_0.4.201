@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<permissions-config>
+	<!-- This xml file is used to store the user permissions.
+		Permissions are defined as tasks that can only be performed
+		by one or more roles. It is responsibility of the application
+		code to ask whether the current user is allowed to perform
+		a given task.
+		
+		Example:
+		<task name="addEmployee" roles="managers,hr">Create a new employee</task>
+	-->
+	
+	<!-- Permissions for menu options -->
+	<task name="menu_general_home" roles="user" />
+	<task name="menu_general_addService" roles="user" />
+	<task name="menu_general_settings" roles="user" />
+	<task name="menu_general_stats" roles="user" />
+	<task name="menu_general_logViewer" roles="user" />
+	
+	<task name="menu_setup_settings" roles="user" />
+	<task name="menu_setup_reset" roles="user" />
+
+	<task name="ehGeneral.dspLogin" roles="" />
+	<task name="ehGeneral.doLogin" roles="" />
+	<task name="ehGeneral.doLogout" roles="user" />
+	<task name="ehGeneral.dspMain" roles="user" />
+	<task name="ehGeneral.dspSettings" roles="user" />
+	<task name="ehGeneral.dspStats" roles="user" />
+	<task name="ehGeneral.dspLogViewer" roles="user" />
+	<task name="ehGeneral.doSaveSettings" roles="user" />
+	<task name="ehGeneral.doStart" roles="user" />
+	<task name="ehGeneral.doStop" roles="user" />
+	<task name="ehGeneral.doChangePassword" roles="user" />
+	<task name="ehGeneral.doDeleteLog" roles="user" />
+	
+	<task name="ehService.dspEdit" roles="user" />
+	<task name="ehService.dspEditAddress" roles="user" />
+	<task name="ehService.doSave" roles="user" />
+	<task name="ehService.doDelete" roles="user" />
+	<task name="ehService.doSaveAddress" roles="user" />
+	<task name="ehService.doDeleteAddress" roles="user" />
+	
+	
+</permissions-config>

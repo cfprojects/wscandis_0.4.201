@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<directory>
+	<defaultTTL>60</defaultTTL>
+	<resources>
+		<resource name="com.oscararevalo.utilities.echo">
+			<description>A test webservice that returns the argument passed</description>
+			<TTL>60</TTL>
+			<address href="http://www.oscararevalo.com/wscandis/test/ws/echo.cfc?wsdl" referrer="*"/>
+		</resource>
+	</resources>
+</directory>
